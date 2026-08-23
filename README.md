@@ -5,6 +5,8 @@ stroke/expansion data, builds variable-width 3D brush geometry, and lets you orb
 zoom, replay the draw-in, and recolor strokes with realistic PBR materials — all in the
 browser, no build step.
 
+![3D Calligraphy viewer showing cursive Chinese calligraphy rendered as 3D extruded clay strokes on a dark navy background, with the material picker and controls panel on the right](assets/viewer-screenshot.png)
+
 ---
 
 ## Open the viewer
