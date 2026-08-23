@@ -284,7 +284,7 @@
     <div class="ctl">
       <label>Source simplify <span style="color:var(--muted);font-weight:400">(RDP, 0 = off)</span></label>
       <div class="row">
-        <input id="simplify" type="range" min="0" max="0.1" step="0.005" value="0.00"><span class="val" id="simplifyV">0.000</span>
+        <input id="simplify" type="range" min="0" max="0.5" step="0.005" value="0.30"><span class="val" id="simplifyV">0.300</span>
       </div>
     </div>
     <div class="ctl">
@@ -1023,7 +1023,7 @@ let currentName = null;   // name of the loaded file (used to scope the saved ca
 const ENDCAPS = { flat: [0, 0], rounded: [0.0, 0.12], pointed: [0.0, 0.04], quick: [0.0, 0.30] };
 let endCapAB = { a: ENDCAPS.rounded[0], b: ENDCAPS.rounded[1] };
 let nodeKeep = 1.0;   // spline-node decimation: 1 = keep all; lower = fewer, smoother nodes
-let sourceEps = 0;    // smart source-node reduction (RDP), as fraction of stroke extent; 0 = off
+let sourceEps = 0.3;  // smart source-node reduction (RDP), as fraction of stroke extent; 0.3 = default for smoother surfaces
 let ctrlCount = 0;    // target control-node count; 0 = no reduction (use all simplified/raw nodes)
 let smoothPasses = 0;  // Inkscape-style raw-input smoothing passes (moving average); 0 = off
 
@@ -1716,7 +1716,7 @@ window.addEventListener('keydown', e => {
 // ---- Persist user settings (sliders + toggles) to localStorage, restore on load ----
 const SETTINGS_KEY = 'xst_settings_v1';
 const CAMERA_KEY   = 'xst_camera_v1';          // saved orbit view (position + target)
-const APP_VERSION  = '1.76';                   // bump on every change so a hard-refresh proves a new build
+const APP_VERSION  = '1.77';                   // bump on every change so a hard-refresh proves a new build
 const SETTINGS_IDS = ['width','depth','thick','speed','rotate','ao','nodes','nodeSize','bgColor','material','endcap','endA','endB','decimate','simplify','ctrl','smooth'];
 function saveSettings() {
   const s = {};
